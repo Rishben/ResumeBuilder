@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <!-- main container div -->
+
+    <div class="w-100 bg-light d-flex flex-column justify-content-center align-items-center">
+        <header class="w-100 bg-primary text-white p-2">
+            <h1 class="text-center">Resume Builder</h1>
+            <p class="text-center">Create yout resume in minutes</p>
+        </header>
+
+        <!-- personalInformation -->
+        <section id="personalInformation">
+            <div id="PItitle" class="mb-3 border-bottom border-2 border-primary">
+                <h2 class="text-center">Personal Information</h2>
+            </div>
+            <div id="personalInformalform">
+                <div id="nameJob">
+                    <label for="name">Full Name
+                        <input type="text" id="name" class="form-control" placeholder="Name">
+                    </label>
+                    <label for="job">Job Title
+                        <input type="text" id="job" class="form-control" placeholder="Job Title">
+                    </label>
+                </div>
+                <div id="emailPhone">
+                    <label for="email">Email*
+                        <input type="email" id="email" class="form-control" placeholder="Email">
+                    </label>
+                    <label for="phone">Phone*
+                        <input type="tel" id="phone" class="form-control" placeholder="Phone">
+                    </label>
+                </div>
+                <div id="location">
+                    <label for="address">
+                        Location*
+                        <input type="text" id="address" class="form-control" placeholder="City, Country">
+                    </label>
+                </div>
+                <div id="LinkedinGit">
+                    <label for="linkedin">
+                        LinkedIn*
+                        <input type="url" id="linkedin" class="form-control"
+                            placeholder="https://www.linkedin.com/in/john-doe/">
+                    </label>
+                    <label for="github">
+                        GitHub
+                        <input type="url" id="github" class="form-control" placeholder="https://github.com/johndoe">
+                    </label>
+                </div>
+                <div id="portfolio">
+                    <label for="portfolio">
+                        Portfolio*
+                        <input type="url" id="portfolio" class="form-control" placeholder="https://tadaaa.com">
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- profesionalSummary -->
+        <section id="profesionalSummary">
+            <div id="PStitle" class="mb-3 border-bottom border-2 border-primary">
+                <h2 class="text-center">Professional Summary</h2>
+            </div>
+            <div id="profesionalSummaryForm">
+                <label for="summary">
+                    <textarea name="summary" id="summarytextarea" class="form-control" rows="3"
+                        placeholder="Write a short summary about yourself"></textarea>
+                </label>
+            </div>
+        </section>
+
+        <!-- skills -->
+        <section id="skills">
+            <div id="Stitle" class="mb-3 border-bottom border-2 border-primary">
+                <h2 class="text-center">Skills</h2>
+            </div>
+            <div id="skillsForm">
+                <label for="skill">
+                    <input type="text" id="skill" class="form-control" placeholder="Skills">
+                </label>
+                <button class="btn btn-primary">Add</button>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="Education">
+            <div id="Etitile" class="mb-3 border-bottom border-2 border-primary">
+                <h2 class="text-center">Education</h2>
+            </div>
+            <div id="educationform">
+                <div id="twelth">
+                    <label for="twelthPer">12th Percentage
+                        <input type="text" id="twelthPer" class="form-control" placeholder="85%">
+                    </label>
+                    <label for="twelthName">12th College Name
+                        <input type="text" id="twelthName" class="form-control" placeholder="12th College Name">
+                    </label>
+                </div>
+                <div id="UGraduation">
+                    <label for="graduation">Graduation cgpa*
+                        <input type="number" id="graduation" class="form-control" placeholder="8 CGPA">
+                    </label>
+                    <label for="graduationCollegeName">Graduated College Name*
+                        <input type="tel" id="graduationCollegeName" class="form-control" placeholder="Graduated College Name">
+                    </label>
+                </div>
+                <div id="HGraduation">
+                    <label for="Highgraduation">Highest Graduation CGPA*
+                        <input type="number" id="Highgraduation" class="form-control" placeholder="8 CGPA">
+                    </label>
+                    <label for="HighgraduationCollegeName">Graduated College Name*
+                        <input type="tel" id="HighgraduationCollegeName" class="form-control" placeholder="Graduated College Name">
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- workExperience -->
+        <section id="workExperience">
+            <div id="Wtitle" class="mb-3 border-bottom border-2 border-primary">
+                <h2 class="text-center">Work Experience</h2>
+            </div>
+            <div id="workExperienceForm">
+                <div id="nameDuration">
+                    <label for="company">Company Name
+                        <input type="text" id="company" class="form-control" placeholder="Company Name">
+                    </label>
+                    <label for="duration">Duration
+                        <input type="text" id="duration" class="form-control" placeholder="Duration">
+                    </label>
+                </div>
+                <div id="Position">
+                    <label for="position">Position
+                        <input type="text" id="position" class="form-control" placeholder="Position">
+                    </label>
+                </div>
+                <div id="Description">
+                    <label for="descriptiontextarea">Description
+                        <textarea name="description" id="descriptiontextarea" class="form-control" rows="5"
+                            placeholder="Write a short description about your job"></textarea>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="Projects">
+            <div id="Ptitle" class="mb-3 border-bottom border-2 border-primary">
+                <h2 class="text-center">Projects</h2>
+            </div>
+            <div id="projectsForm">
+                <div id="myProject">
+                    <label for="project">Project Name
+                        <input type="text" id="project" class="form-control" placeholder="Project Name">
+                    </label>
+                    <button class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- achievements -->
+        <section id="achievements">
+            <div id="Atitle" class="mb-3 border-bottom border-2 border-primary">
+                <h2 class="text-center">Achievements</h2>
+            </div>
+            <div id="achievementsForm">
+                <div id="myAchievement">
+                    <label for="achievement">Achievement
+                        <input type="text" id="achievement" class="form-control" placeholder="Achievement">
+                    </label>
+                    <button class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="w-100 text-center bg-light py-3 text-white p-2">
+        <button class="btn btn-success">Download Resume</button>
+    </footer>
+
+    <script src="script.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
