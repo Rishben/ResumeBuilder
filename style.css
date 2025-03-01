@@ -62,10 +62,28 @@ label {
     background-color: white;
     margin-bottom: 5px;
 }
+/* Content lists styling */
+.content-list-work {
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
 .wrapperForSkill{
     max-height: 100px;
     overflow-y: auto;
-
+}
+.wrapperForProject{
+    max-height: 110px;
+    overflow-y: auto;
+}
+.wrapperForWork{
+    max-height: 205px;
+    overflow-y: auto;
 }
 
 /* Textarea styling */

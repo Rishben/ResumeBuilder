@@ -128,8 +128,95 @@ document.getElementById('addAchievementBtn').addEventListener('click', function(
         if (achievementsListWrapper.classList.contains('d-none')) {
             achievementsListWrapper.classList.remove('d-none');
         }
-
         // Clear the input field
         achievementInput.value = '';
+    }
+});
+
+
+// Work Experience Section
+document.getElementById('addExperienceBtn').addEventListener('click', function() {
+    const company = document.getElementById('company').value;
+    const duration = document.getElementById('duration').value;
+    const position = document.getElementById('position').value;
+    const description = document.getElementById('descriptiontextarea').value;
+
+    if (company && duration && position && description) {
+        const workExperienceList = document.getElementById('workExperienceList');
+        const workExperienceListWrapper = document.getElementById('workExperienceListWrapper');
+
+        const workExperienceItem = document.createElement('div');
+        workExperienceItem.classList.add('content-list-work','work-experience-item', 'mb-3');
+
+        workExperienceItem.innerHTML = `
+            <h5>${company}</h5>
+            <p><strong>Duration:</strong> ${duration}</p>
+            <p><strong>Position:</strong> ${position}</p>
+            <p><strong>Description:</strong> ${description}</p>
+        `;
+
+        // Create a delete button
+        const deleteBtn = document.createElement('button');
+        deleteBtn.className = 'btn btn-danger btn-sm';
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.addEventListener('click', function() {
+            workExperienceList.removeChild(workExperienceItem);
+            if (workExperienceList.children.length === 0) {
+                workExperienceListWrapper.classList.add('d-none');
+            }
+        });
+
+        workExperienceItem.appendChild(deleteBtn);
+        workExperienceList.appendChild(workExperienceItem);
+        workExperienceListWrapper.classList.remove('d-none');
+
+        // Clear input fields after adding
+        document.getElementById('company').value = '';
+        document.getElementById('duration').value = '';
+        document.getElementById('position').value = '';
+        document.getElementById('descriptiontextarea').value = '';
+    } else {
+        alert('Please fill in all fields.');
+    }
+});
+
+
+// Projects Section
+document.getElementById('addProjectBtn').addEventListener('click', function() {
+    const projectName = document.getElementById('project').value;
+    const projectDescription = document.getElementById('description').value;
+
+    if (projectName && projectDescription) {
+        const projectsList = document.getElementById('projectsList');
+        const projectsListWrapper = document.getElementById('projectsListWrapper');
+
+        const projectItem = document.createElement('div');
+        projectItem.classList.add('content-list-work','project-item', 'mb-3');
+
+        projectItem.innerHTML = `
+            <h5>${projectName}</h5>
+            <p><strong>Description:</strong> ${projectDescription}</p>
+        `;
+
+        // Create a delete button
+        const deleteBtn = document.createElement('button');
+        deleteBtn.className = 'btn btn-danger btn-sm';
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.addEventListener('click', function() {
+            projectsList.removeChild(projectItem);
+            if (projectsList.children.length === 0) {
+                projectsListWrapper.classList.add('d-none');
+            }
+        });
+
+        projectItem.appendChild(deleteBtn);
+        projectsList.appendChild(projectItem);
+        projectsListWrapper.classList.remove('d-none');
+
+        // Clear input fields after adding
+        document.getElementById('project').value = '';
+        document.getElementById('description').value = '';
+    } else {
+        alert('Please fill in all fields.');
     }
 });
