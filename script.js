@@ -89,3 +89,47 @@ document.getElementById('addEducationBtn').addEventListener('click', function() 
         yearInput.value = '';
     }
 });
+
+
+// Achievement Section
+document.getElementById('addAchievementBtn').addEventListener('click', function() {
+    const achievementInput = document.getElementById('achievement');
+    const achievementsListWrapper = document.getElementById('achievmentsListWrapper');
+    const achievementsList = document.getElementById('achievmentsList');
+
+    if (achievementInput.value.trim() !== '') {
+        // Create a new div for the achievement
+        const achievementDiv = document.createElement('div');
+        achievementDiv.className = 'achievement-item content-list d-flex justify-content-between align-items-center';
+
+        // Create a span for the achievement text
+        const achievementText = document.createElement('span');
+        achievementText.textContent = achievementInput.value;
+
+        // Create a delete button
+        const deleteBtn = document.createElement('button');
+        deleteBtn.className = 'btn btn-danger btn-sm';
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.addEventListener('click', function() {
+            achievementsList.removeChild(achievementDiv);
+            if (achievementsList.children.length === 0) {
+                achievementsListWrapper.classList.add('d-none');
+            }
+        });
+
+        // Append the achievement text and delete button to the achievement div
+        achievementDiv.appendChild(achievementText);
+        achievementDiv.appendChild(deleteBtn);
+
+        // Append the new achievement div to the achievements list
+        achievementsList.appendChild(achievementDiv);
+
+        // Show the achievements list wrapper if it was hidden
+        if (achievementsListWrapper.classList.contains('d-none')) {
+            achievementsListWrapper.classList.remove('d-none');
+        }
+
+        // Clear the input field
+        achievementInput.value = '';
+    }
+});
