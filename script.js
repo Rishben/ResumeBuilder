@@ -313,7 +313,7 @@ function generateResumeContent() {
             <!-- Header section -->
             <div class="resume-header mb-4">
                 <h1 class="text-center fw-bold">${name}</h1>
-                <h3 class="text-center text-primary">${jobTitle}</h3>
+                <h3 class="text-center text-dark">${jobTitle}</h3>
                 <div class="d-flex justify-content-center gap-3 mt-2 flex-wrap">
                     <span><i class="fas fa-envelope me-1"></i>${email}</span>
                     <span><i class="fas fa-phone me-1"></i>${phone}</span>
@@ -328,7 +328,7 @@ function generateResumeContent() {
 
             <!-- Professional Summary -->
             <div class="resume-section mb-4">
-                <h2 class="resume-section-title border-bottom border-2 border-primary pb-1">Professional Summary</h2>
+                <h2 class="resume-section-title border-bottom border-2 border-dark pb-1">Professional Summary</h2>
                 <p>${summary}</p>
             </div>
     `;
@@ -338,7 +338,7 @@ function generateResumeContent() {
     if (skillsList && skillsList.children.length > 0) {
         html += `
             <div class="resume-section mb-4">
-                <h2 class="resume-section-title border-bottom border-2 border-primary pb-1">Skills</h2>
+                <h2 class="resume-section-title border-bottom border-2 border-dark pb-1">Skills</h2>
                 <div class="d-flex flex-wrap gap-2">
         `;
         
@@ -358,7 +358,7 @@ function generateResumeContent() {
     if (educationList && educationList.children.length > 0) {
         html += `
             <div class="resume-section mb-4">
-                <h2 class="resume-section-title border-bottom border-2 border-primary pb-1">Education</h2>
+                <h2 class="resume-section-title border-bottom border-2 border-dark pb-1">Education</h2>
                 <ul class="list-unstyled">
         `;
         
@@ -389,7 +389,7 @@ function generateResumeContent() {
     if (workExperienceList && workExperienceList.children.length > 0) {
         html += `
             <div class="resume-section mb-4">
-                <h2 class="resume-section-title border-bottom border-2 border-primary pb-1">Work Experience</h2>
+                <h2 class="resume-section-title border-bottom border-2 border-dark pb-1">Work Experience</h2>
                 <ul class="list-unstyled">
         `;
         
@@ -423,7 +423,7 @@ function generateResumeContent() {
     if (projectsList && projectsList.children.length > 0) {
         html += `
             <div class="resume-section mb-4">
-                <h2 class="resume-section-title border-bottom border-2 border-primary pb-1">Projects</h2>
+                <h2 class="resume-section-title border-bottom border-2 border-dark pb-1">Projects</h2>
                 <ul class="list-unstyled">
         `;
         
@@ -450,7 +450,7 @@ function generateResumeContent() {
     if (achievementsList && achievementsList.children.length > 0) {
         html += `
             <div class="resume-section mb-4">
-                <h2 class="resume-section-title border-bottom border-2 border-primary pb-1">Achievements</h2>
+                <h2 class="resume-section-title border-bottom border-2 border-dark pb-1">Achievements</h2>
                 <ul>
         `;
         
@@ -481,7 +481,6 @@ function generateResumeContent() {
             font-family: Arial, sans-serif;
         }
         .resume-section-title {
-            color: #0d6efd;
             font-weight: bold;
             margin-bottom: 10px;
         }
